@@ -143,35 +143,90 @@
       });
     }
 
-    async function loadFaqs() {
-      const { data, error } = await sb.from('faqs').select('*').order('sort_order', { ascending: true });
-      if (error) {
-        faqList.innerHTML = '<div class="company-note">FAQ를 불러오지 못했습니다.</div>';
-        return;
+    let faqsCache = [];
+    let editingFaqId = null;
+
+    function renderFaqRow(row) {
+      if (row.id === editingFaqId) {
+        return (
+          '<div class="notice-item" data-id="' +
+          row.id +
+          '">' +
+          '<div class="input-row" style="margin-bottom:8px;">' +
+          '<input type="text" class="faq-edit-question" value="' + esc(row.question) + '" placeholder="질문"></div>' +
+          '<div class="input-row" style="margin-bottom:8px;">' +
+          '<input type="text" class="faq-edit-answer" value="' + esc(row.answer) + '" placeholder="답변"></div>' +
+          '<div style="display:flex; gap:8px;">' +
+          '<button type="button" class="ppt-nav-btn faq-save-btn">저장</button>' +
+          '<button type="button" class="p-del-btn faq-cancel-btn">취소</button>' +
+          '</div>' +
+          '</div>'
+        );
       }
-      if (!data || data.length === 0) {
+      return (
+        '<div class="notice-item" data-id="' +
+        row.id +
+        '">' +
+        '<div class="notice-top">' +
+        '<span class="notice-title">Q. ' +
+        esc(row.question) +
+        '</span>' +
+        '<span style="display:flex; align-items:center; gap:8px;">' +
+        '<button type="button" class="p-del-btn faq-edit-btn">수정</button>' +
+        '<button type="button" class="p-del-btn faq-del-btn">삭제</button>' +
+        '</span>' +
+        '</div>' +
+        '<div class="notice-body">A. ' +
+        esc(row.answer) +
+        '</div>' +
+        '</div>'
+      );
+    }
+
+    function renderFaqs() {
+      if (!faqsCache || faqsCache.length === 0) {
         faqList.innerHTML = '<div class="company-note">등록된 FAQ가 없습니다.</div>';
         return;
       }
-      faqList.innerHTML = data
-        .map(function (row) {
-          return (
-            '<div class="notice-item" data-id="' +
-            row.id +
-            '">' +
-            '<div class="notice-top">' +
-            '<span class="notice-title">Q. ' +
-            esc(row.question) +
-            '</span>' +
-            '<button type="button" class="p-del-btn faq-del-btn">삭제</button>' +
-            '</div>' +
-            '<div class="notice-body">A. ' +
-            esc(row.answer) +
-            '</div>' +
-            '</div>'
-          );
-        })
-        .join('');
+      faqList.innerHTML = faqsCache.map(renderFaqRow).join('');
+
+      faqList.querySelectorAll('.faq-edit-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          editingFaqId = btn.closest('[data-id]').dataset.id;
+          renderFaqs();
+        });
+      });
+
+      faqList.querySelectorAll('.faq-cancel-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          editingFaqId = null;
+          renderFaqs();
+        });
+      });
+
+      faqList.querySelectorAll('.faq-save-btn').forEach(function (btn) {
+        btn.addEventListener('click', async function () {
+          const wrap = btn.closest('[data-id]');
+          const id = wrap.dataset.id;
+          const question = wrap.querySelector('.faq-edit-question').value.trim();
+          const answer = wrap.querySelector('.faq-edit-answer').value.trim();
+          if (!question || !answer) {
+            alert('질문과 답변을 입력하세요.');
+            return;
+          }
+          btn.disabled = true;
+          btn.textContent = '저장 중...';
+          const { error } = await sb.from('faqs').update({ question: question, answer: answer }).eq('id', id);
+          if (error) {
+            alert('수정 실패: ' + error.message);
+            btn.disabled = false;
+            btn.textContent = '저장';
+            return;
+          }
+          editingFaqId = null;
+          loadFaqs();
+        });
+      });
 
       faqList.querySelectorAll('.faq-del-btn').forEach(function (btn) {
         btn.addEventListener('click', async function () {
@@ -181,6 +236,16 @@
           loadFaqs();
         });
       });
+    }
+
+    async function loadFaqs() {
+      const { data, error } = await sb.from('faqs').select('*').order('sort_order', { ascending: true });
+      if (error) {
+        faqList.innerHTML = '<div class="company-note">FAQ를 불러오지 못했습니다.</div>';
+        return;
+      }
+      faqsCache = data || [];
+      renderFaqs();
     }
 
     noticeAddBtn.addEventListener('click', async function () {

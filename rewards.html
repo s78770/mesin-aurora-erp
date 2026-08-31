@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<script>try{if(localStorage.getItem('aurora_theme')==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MESIN DAO · Aurora ERP · 보상</title>
+<link rel="stylesheet" href="assets/style.css">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0c1424">
+<link rel="icon" type="image/png" href="assets/icons/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Aurora ERP">
+</head>
+<body data-page="rewards">
+<div class="app" id="app">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <div class="sidebar-logo-mark">M</div>
+      <span>MESIN DAO</span>
+    </div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+    <div class="sidebar-bottom">
+      <nav class="sidebar-bottom-nav" id="sidebarBottomNav"></nav>
+      <div class="sidebar-foot">Aurora ERP · v1.0</div>
+    </div>
+  </aside>
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+  <div class="main">
+    <header class="topbar">
+      <button type="button" class="burger" id="sidebarToggle" aria-label="메뉴 열기">☰</button>
+      <div class="breadcrumb">MESIN DAO / <b id="breadcrumbLabel">보상</b></div>
+      <button type="button" class="theme-toggle" id="themeToggle" aria-label="테마 전환">🌙</button>
+      <div class="topbar-right">Aurora 패키지 관리</div>
+    </header>
+
+    <main class="page-content">
+
+  <div class="hero">
+    <div class="aurora-band"></div>
+    <div class="brand-row">
+      <div class="brand-mesin">
+        <img src="assets/logo-mark.png" alt="MESIN">
+        <span>MESIN DAO</span>
+      </div>
+      <div class="brand-div"></div>
+      <img src="assets/logo-wordmark.png" alt="Aurora Entertainment">
+    </div>
+    <div class="eyebrow">MESIN DAO · AURORA PACKAGE</div>
+    <h1>메신다오에 참여하면<br>ARRG를 얼마나 받을까?</h1>
+    <p class="hero-sub">참여금을 입력하면 전환 수량, 매월 리워드, 매일 이자, 상장 전 보너스까지 한 번에 계산돼요.</p>
+
+    <div class="calc">
+      <div class="calc-label">투자금 입력</div>
+      <div class="calc-row2">
+        <div class="field">
+          <label>참여금액</label>
+          <div class="input-row">
+            <span class="prefix">$</span>
+            <input type="number" id="amountInput" value="0" min="0" step="100" inputmode="numeric">
+          </div>
+        </div>
+        <div class="field">
+          <label>상장까지 남은 일수</label>
+          <div class="input-row">
+            <input type="number" id="daysInput" value="0" min="0" step="1" inputmode="numeric">
+            <span class="suffix">일</span>
+          </div>
+        </div>
+      </div>
+      <div class="presets" style="margin-top:0;">
+        <button class="preset-btn" data-val="3000">$3,000</button>
+        <button class="preset-btn" data-val="5000">$5,000</button>
+        <button class="preset-btn" data-val="10000">$10,000</button>
+        <button class="preset-btn" data-val="15000">$15,000</button>
+        <button class="preset-btn" data-val="30000">$30,000</button>
+      </div>
+    </div>
+
+    <div class="flow">
+      <div class="chip"><span>참여금</span><b class="num" id="chipAmount">$0</b></div>
+      <div class="arrow">→</div>
+      <div class="chip"><span>35%×2배</span><b class="num" id="chipDouble">$0</b></div>
+      <div class="arrow">→</div>
+      <div class="chip"><span>1ARRG =</span><b class="num">$0.01</b></div>
+      <div class="arrow">→</div>
+      <div class="chip result"><span>지급 ARRG</span><b class="num" id="chipArrg">0</b></div>
+    </div>
+
+    <div class="top-summary">
+      <div class="ts-head" id="summaryTitle">$0 참여 · 상장까지 0일 남은 경우 · 총 예상 수령</div>
+      <div class="ts-line"><span>① 원금 리워드 (15개월)</span><span class="v num" id="sumA">0</span></div>
+      <div class="ts-line"><span>② 스테이킹 이자 (15개월)</span><span class="v num" id="sumB">≈ 0</span></div>
+      <div class="ts-line">
+        <span>③ 상장 전 이자 보너스</span><span class="v num" id="sumC">0</span>
+      </div>
+      <div class="ts-bonus-formula" id="tsBonusFormula">일일이자 0.00 × 남은 0일 = 0 ARRG</div>
+      <div class="ts-total">
+        <span class="lbl">총 예상 수령 ARRG</span>
+        <span class="val num" id="sumTotal">≈ 0</span>
+      </div>
+    </div>
+  </div>
+
+  <section style="padding-bottom:2px;">
+    <div class="section-label">Step 1</div>
+    <div class="section-title">받은 <span id="stakeAmt" class="num">0</span>개는 전부 스테이킹 (100% 의무)</div>
+  </section>
+
+  <section style="padding-top:8px;">
+    <div class="card">
+      <div class="card-top">
+        <div>
+          <span class="card-tag tag-a">보상 ①</span>
+          <div class="card-name">원금 리워드 (2배 지급분)</div>
+          <div class="card-freq">상장일부터 매달 1회 · 총 15회</div>
+        </div>
+      </div>
+      <div class="big-row"><span class="big-num num" id="monthlyReward">0.00</span><span class="big-unit">ARRG / 월</span></div>
+      <div class="formula" id="monthlyFormula">0 ÷ 15개월 = 0.00 ARRG</div>
+      <div class="total-row">
+        <span class="lbl">15개월 누적 합계</span>
+        <span class="val a num" id="monthlyTotal">0 ARRG</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <div>
+          <span class="card-tag tag-b">보상 ②</span>
+          <div class="card-name">스테이킹 이자 (APY)</div>
+          <div class="card-freq">스테이킹 시작일부터 매일 1회 지급</div>
+        </div>
+      </div>
+
+      <div class="apy-table" id="apyTable">
+        <div class="apy-row active" data-tier="0"><span class="apy-range">35만개 미만<span class="apy-badge">내 구간</span></span><span class="apy-pct">6%</span></div>
+        <div class="apy-row" data-tier="1"><span class="apy-range">35만 ~ 70만개 미만</span><span class="apy-pct">8%</span></div>
+        <div class="apy-row" data-tier="2"><span class="apy-range">70만 ~ 105만개 미만</span><span class="apy-pct">10%</span></div>
+        <div class="apy-row" data-tier="3"><span class="apy-range">105만개 이상</span><span class="apy-pct">12%</span></div>
+      </div>
+
+      <div class="big-row" style="margin-top:16px;"><span class="big-num num" id="dailyInterest">0.00</span><span class="big-unit">ARRG / 일</span></div>
+      <div class="formula" id="dailyFormula">0 × 6% ÷ 365일 = 0.00 ARRG</div>
+      <div class="total-row">
+        <span class="lbl">15개월 누적 합계</span>
+        <span class="val b num" id="interestTotal">≈ 0 ARRG</span>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-bottom:6px;">
+    <div class="note">
+      ⚠️ 참고: 실제 상장일이 확정되면 ‘상장 전 이자 보너스’ 일수는 정확한 날짜 수에 따라 달라집니다. 스테이킹 구간(APY)은 입력한 참여금에 따라 자동으로 바뀝니다.
+    </div>
+  </section>
+
+      <div class="foot">MESIN DAO · AURORA · 예시 자료 (실제 지급 조건은 공식 공지 기준)</div>
+    </main>
+  </div><!-- /main -->
+</div><!-- /app -->
+<nav class="bottom-nav" id="bottomNav"></nav>
+
+<script src="assets/sidebar.js"></script>
+<script src="assets/calculator.js"></script>
+</body>
+</html>

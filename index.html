@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<script>try{if(localStorage.getItem('aurora_theme')==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MESIN DAO · Aurora ERP · 대시보드</title>
+<link rel="stylesheet" href="assets/style.css">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0c1424">
+<link rel="icon" type="image/png" href="assets/icons/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Aurora ERP">
+</head>
+<body data-page="dashboard">
+<div class="app" id="app">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <div class="sidebar-logo-mark">M</div>
+      <span>MESIN DAO</span>
+    </div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+    <div class="sidebar-bottom">
+      <nav class="sidebar-bottom-nav" id="sidebarBottomNav"></nav>
+      <div class="sidebar-foot">Aurora ERP · v1.0</div>
+    </div>
+  </aside>
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+  <div class="main">
+    <header class="topbar">
+      <button type="button" class="burger" id="sidebarToggle" aria-label="메뉴 열기">☰</button>
+      <div class="breadcrumb">MESIN DAO / <b id="breadcrumbLabel">대시보드</b></div>
+      <button type="button" class="theme-toggle" id="themeToggle" aria-label="테마 전환">🌙</button>
+      <div class="topbar-right">Aurora 패키지 관리</div>
+    </header>
+
+    <main class="page-content">
+
+      <div class="dash-welcome">
+        <h2>안녕하세요 👋</h2>
+        <p>MESIN DAO Aurora 패키지 관리 화면입니다. 왼쪽 메뉴에서 원하는 페이지로 이동하세요.</p>
+      </div>
+      <div class="dash-grid">
+        <div class="dash-stat"><div class="lbl">참여 패키지</div><div class="val num">Aurora</div></div>
+        <div class="dash-stat"><div class="lbl">지급 방식</div><div class="val num">월 1회 + 매일</div></div>
+        <div class="dash-stat"><div class="lbl">지급 기간</div><div class="val num">15개월</div></div>
+        <div class="dash-stat"><div class="lbl">최대 APY</div><div class="val num">12%</div></div>
+      </div>
+      <div class="quick-links">
+        <a class="quick-card" href="company.html">
+          <div class="qc-icon">🏢</div>
+          <div class="qc-title">회사소개</div>
+          <div class="qc-desc">MESIN DAO와 Aurora 패키지를 소개합니다.</div>
+        </a>
+        <a class="quick-card" href="rewards.html">
+          <div class="qc-icon">🧮</div>
+          <div class="qc-title">보상</div>
+          <div class="qc-desc">참여금을 입력해서 예상 수령액을 계산해보세요.</div>
+        </a>
+        <a class="quick-card" href="timeline.html">
+          <div class="qc-icon">🗓️</div>
+          <div class="qc-title">타임라인</div>
+          <div class="qc-desc">스테이킹부터 15개월 지급 완료까지 전체 일정을 확인하세요.</div>
+        </a>
+      </div>
+
+      <div class="foot">MESIN DAO · AURORA · 예시 자료 (실제 지급 조건은 공식 공지 기준)</div>
+    </main>
+  </div><!-- /main -->
+</div><!-- /app -->
+<nav class="bottom-nav" id="bottomNav"></nav>
+
+<script src="assets/sidebar.js"></script>
+</body>
+</html>

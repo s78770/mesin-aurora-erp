@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<script>try{if(localStorage.getItem('aurora_theme')==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MESIN DAO · Aurora ERP · 타임라인</title>
+<link rel="stylesheet" href="assets/style.css">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0c1424">
+<link rel="icon" type="image/png" href="assets/icons/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Aurora ERP">
+</head>
+<body data-page="timeline">
+<div class="app" id="app">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <div class="sidebar-logo-mark">M</div>
+      <span>MESIN DAO</span>
+    </div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+    <div class="sidebar-bottom">
+      <nav class="sidebar-bottom-nav" id="sidebarBottomNav"></nav>
+      <div class="sidebar-foot">Aurora ERP · v1.0</div>
+    </div>
+  </aside>
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+  <div class="main">
+    <header class="topbar">
+      <button type="button" class="burger" id="sidebarToggle" aria-label="메뉴 열기">☰</button>
+      <div class="breadcrumb">MESIN DAO / <b id="breadcrumbLabel">타임라인</b></div>
+      <button type="button" class="theme-toggle" id="themeToggle" aria-label="테마 전환">🌙</button>
+      <div class="topbar-right">Aurora 패키지 관리</div>
+    </header>
+
+    <main class="page-content timeline-page">
+
+  <section>
+    <div class="section-label">Step 2</div>
+    <div class="section-title">전체 기간 타임라인</div>
+
+    <div class="timeline-wrap">
+      <div class="tl-track">
+        <div class="tl-line"></div>
+
+        <div class="tl-item">
+          <div class="tl-dot dot-gold"></div>
+          <div class="tl-date" id="tlDate1">오늘 ~ 상장 전 · 예시 0일</div>
+          <div class="tl-title">🔒 지금 스테이킹 시작 → 이자 선(先)적립 구간</div>
+          <div class="tl-desc">
+            스테이킹은 <span class="num-hl">지금 바로</span> 시작할 수 있어요. 상장 전까지 매일 <span class="num-hl" id="tlDaily1">0.00개</span>씩 이자가 추가로 쌓입니다.<br>
+            <span id="tlBonusFormula">예: 0일 남았다면 → 0.00 × 0 = <span class="num-hl">0 ARRG</span> 추가 적립</span>
+          </div>
+          <div class="tl-box"><span class="pill gold">일일이자만 발생</span></div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot dot-teal"></div>
+          <div class="tl-date">12월 상장일 (미정)</div>
+          <div class="tl-title">🚀 15개월 지급 시작</div>
+          <div class="tl-desc">이 날부터 <span class="num-hl">원금 리워드(월 1회)</span>와 <span class="num-hl">스테이킹 이자(매일)</span>가 동시에 지급되기 시작합니다.</div>
+          <div class="tl-box"><span class="pill teal" id="tlPillMonthly">월 0.00 ARRG</span><span class="pill teal" id="tlPillDaily">일 0.00 ARRG</span></div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot dot-violet"></div>
+          <div class="tl-date">상장일 + 1 ~ 15개월</div>
+          <div class="tl-title">📅 매달 15회 반복 지급</div>
+          <div class="tl-desc">매달 같은 날, 원금 리워드가 15번 지급되고, 그 사이 매일 이자도 계속 쌓입니다.</div>
+          <div class="tl-box"><span class="pill violet" id="tlPillFinish">15회 완료 시 0 ARRG</span></div>
+        </div>
+
+        <div class="tl-item" style="padding-bottom:0;">
+          <div class="tl-dot dot-violet"></div>
+          <div class="tl-date">15개월차 종료</div>
+          <div class="tl-title">🏁 지급 완료</div>
+          <div class="tl-desc">원금 리워드와 이자 지급이 모두 종료됩니다.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+      <div class="foot">MESIN DAO · AURORA · 예시 자료 (실제 지급 조건은 공식 공지 기준)</div>
+    </main>
+  </div><!-- /main -->
+</div><!-- /app -->
+<nav class="bottom-nav" id="bottomNav"></nav>
+
+<script src="assets/sidebar.js"></script>
+<script src="assets/calculator.js"></script>
+</body>
+</html>

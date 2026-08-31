@@ -9,7 +9,7 @@
     'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1aXl5d3p5aHZ4c3RxeHFicGVrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODgxODcyNzUsImV4cCI6MjEwMzc2MzI3NX0.LT-1BYihLZAFsUwO8TNZ6dNp8mNwl27IDPmvcF7yFu8';
   const REST_URL = SUPABASE_URL + '/rest/v1/participants';
   const SHARED_PASSWORD = 'Aurora2026!';
-  const AUTH_KEY = 'aurora_participants_auth_v1';
+  const AUTH_KEY = 'aurora_participants_auth_v1'; // 이 페이지 전용 잠금 상태 (브라우저별 localStorage)
 
   function restHeaders(extra) {
     return Object.assign(

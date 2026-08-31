@@ -589,6 +589,31 @@ body[data-page="settings"] .page-content{ max-width:760px; }
 .countdown-empty a{ color:var(--teal); text-decoration:none; font-weight:700; }
 .countdown-empty a:hover{ text-decoration:underline; }
 
+/* FAQ 아코디언 */
+.faq-item{
+  background:var(--card); border:1px solid var(--line); border-radius:12px;
+  margin-bottom:8px; overflow:hidden;
+}
+.faq-item summary{
+  padding:14px 16px; cursor:pointer; font-weight:700; font-size:13px;
+  list-style:none; display:flex; align-items:center; justify-content:space-between; gap:10px;
+}
+.faq-item summary::-webkit-details-marker{ display:none; }
+.faq-item summary::after{ content:'+'; color:var(--muted); font-size:16px; flex:0 0 auto; }
+.faq-item[open] summary::after{ content:'−'; color:var(--teal); }
+.faq-item summary:hover{ color:var(--teal); }
+.faq-answer{ padding:0 16px 14px; font-size:12.5px; color:var(--muted); line-height:1.7; }
+
+/* 공지사항 게시판 */
+.notice-item{
+  background:var(--card); border:1px solid var(--line); border-radius:12px;
+  padding:14px 16px; margin-bottom:8px;
+}
+.notice-top{ display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:6px; }
+.notice-title{ font-weight:800; font-size:13.5px; }
+.notice-date{ font-size:10.5px; color:var(--muted); flex:0 0 auto; font-family:'Space Grotesk',monospace; }
+.notice-body{ font-size:12.5px; color:var(--muted); line-height:1.7; white-space:pre-wrap; }
+
 .timeline-panel{
   background:var(--card); border:1px solid var(--line); border-radius:20px;
   padding:26px 24px 28px; margin:0 20px 20px;

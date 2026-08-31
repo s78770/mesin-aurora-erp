@@ -1,7 +1,7 @@
 // Aurora ERP 서비스워커: 오프라인에서도 앱 셸을 열 수 있도록 캐싱합니다.
 // 주의: 서비스워커는 HTTPS(또는 localhost)에서만 등록됩니다. IP로 http 접속 중이라면
 // 브라우저가 등록을 건너뛰므로, 나머지 기능(로딩)에는 영향 없이 캐싱만 비활성 상태가 됩니다.
-const CACHE_NAME = 'aurora-erp-v4';
+const CACHE_NAME = 'aurora-erp-v5';
 const APP_SHELL = [
   'index.html',
   'company.html',
@@ -10,12 +10,23 @@ const APP_SHELL = [
   'settings.html',
   'ppt.html',
   'participants.html',
+  'notices.html',
+  'faq.html',
+  'login.html',
+  'admin.html',
   'manifest.json',
   'assets/style.css',
   'assets/sidebar.js',
   'assets/calculator.js',
   'assets/ppt-viewer.js',
   'assets/participants.js',
+  'assets/settings.js',
+  'assets/dashboard.js',
+  'assets/notices.js',
+  'assets/faq.js',
+  'assets/auth-client.js',
+  'assets/auth.js',
+  'assets/admin.js',
   'assets/logo-mark.png',
   'assets/logo-wordmark.png',
   'assets/icons/icon-192.png',

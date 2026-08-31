@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<script>try{if(localStorage.getItem('aurora_theme')==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MESIN DAO · Aurora ERP · 관리자 로그인</title>
+<link rel="stylesheet" href="assets/style.css">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0c1424">
+<link rel="icon" type="image/png" href="assets/icons/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Aurora ERP">
+</head>
+<body data-page="admin">
+<div class="app" id="app">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <div class="sidebar-logo-mark">M</div>
+      <span>MESIN DAO</span>
+    </div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+    <div class="sidebar-bottom">
+      <nav class="sidebar-bottom-nav" id="sidebarBottomNav"></nav>
+      <div class="sidebar-foot">Aurora ERP · v1.0</div>
+    </div>
+  </aside>
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+  <div class="main">
+    <header class="topbar">
+      <button type="button" class="burger" id="sidebarToggle" aria-label="메뉴 열기">☰</button>
+      <div class="breadcrumb">MESIN DAO / <b id="breadcrumbLabel">관리자</b></div>
+      <button type="button" class="theme-toggle" id="themeToggle" aria-label="테마 전환">🌙</button>
+      <div class="topbar-right">Aurora 패키지 관리</div>
+    </header>
+
+    <main class="page-content">
+
+      <div class="p-gate">
+        <div class="p-gate-card" style="max-width:380px;">
+          <div class="p-gate-icon">🔑</div>
+          <h2 id="authTitle">관리자 로그인</h2>
+          <p>공지사항 · FAQ를 관리하려면 로그인하세요.</p>
+
+          <div class="presets" style="justify-content:center; margin-bottom:16px;">
+            <button type="button" class="preset-btn active" id="tabLogin">로그인</button>
+            <button type="button" class="preset-btn" id="tabSignup">회원가입</button>
+          </div>
+
+          <div id="authForm">
+            <div class="input-row" style="margin-bottom:10px;">
+              <input type="email" id="authEmail" placeholder="이메일" autocomplete="username">
+            </div>
+            <div class="input-row" style="margin-bottom:12px;">
+              <input type="password" id="authPassword" placeholder="비밀번호 (6자 이상)" autocomplete="current-password">
+            </div>
+            <button type="button" class="ppt-nav-btn" id="authSubmit" style="width:100%;">로그인</button>
+          </div>
+
+          <div class="p-gate-error" id="authError" hidden></div>
+          <div class="company-note" id="authNote" style="margin-top:14px;">
+            가입 후에는 관리자가 승인해야 공지사항/FAQ를 수정할 수 있습니다.
+          </div>
+        </div>
+      </div>
+
+      <div class="foot">MESIN DAO · AURORA · 예시 자료 (실제 지급 조건은 공식 공지 기준)</div>
+    </main>
+  </div><!-- /main -->
+</div><!-- /app -->
+<nav class="bottom-nav" id="bottomNav"></nav>
+
+<script src="assets/sidebar.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="assets/auth-client.js"></script>
+<script src="assets/auth.js"></script>
+</body>
+</html>

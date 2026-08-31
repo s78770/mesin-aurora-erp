@@ -323,9 +323,7 @@ section{ padding:20px 18px 2px; }
 }
 .sidebar-logo-mark{
   width:26px; height:26px; border-radius:8px; flex:0 0 auto;
-  background:linear-gradient(135deg, var(--teal), var(--violet));
-  display:flex; align-items:center; justify-content:center;
-  font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:13px; color:var(--on-accent);
+  object-fit:cover; display:block;
 }
 .sidebar-brand span{ font-family:'Space Grotesk','Noto Sans KR',sans-serif; font-weight:700; font-size:14px; }
 .sidebar-nav{ flex:1; padding:12px 10px; display:flex; flex-direction:column; gap:2px; overflow-y:auto; }

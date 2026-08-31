@@ -570,8 +570,10 @@ body[data-page="ppt"] .foot{ margin-top:18px; margin-bottom:18px; }
 /* 아주 넓은 화면(>=1300px)에서만 오른쪽에 슬라이드 축소판 목록(레일)을 노출.
    여백을 그냥 비워두는 대신 탐색에 실제로 쓸모 있는 UI로 채움. 좁은 화면에서는 숨김. */
 @media (min-width:1300px){
-  .ppt-layout{ flex-direction:row; align-items:flex-start; justify-content:center; gap:12px; }
-  .ppt-main{ max-width:1180px; margin:0; }
+  /* 썸네일 레일은 오른쪽에 고정 폭으로 붙이고, 이미지는 "남은 전체 공간" 안에서
+     다시 가운데 정렬함 (그냥 그룹 전체를 가운데 정렬하면 이미지가 왼쪽으로 치우쳐 보임). */
+  .ppt-layout{ display:grid; grid-template-columns:1fr auto; align-items:start; gap:20px; }
+  .ppt-main{ max-width:none; margin:0; display:flex; flex-direction:column; align-items:center; }
   .ppt-stage{ width:min(100%, calc((100vh - 185px) * 16 / 9)); margin:0; }
   .ppt-thumbs{
     display:flex; flex-direction:column; gap:6px;

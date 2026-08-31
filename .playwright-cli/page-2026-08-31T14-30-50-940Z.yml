@@ -1,0 +1,90 @@
+- generic [active] [ref=f3e1]:
+  - generic [ref=f3e2]:
+    - complementary [ref=f3e3]:
+      - generic [ref=f3e4]:
+        - generic [ref=f3e5]: M
+        - generic [ref=f3e6]: MESIN DAO
+      - navigation [ref=f3e7]:
+        - link "🏠 대시보드" [ref=f3e8] [cursor=pointer]:
+          - /url: index.html
+          - generic [ref=f3e9]: 🏠
+          - generic [ref=f3e10]: 대시보드
+        - link "🏢 회사소개" [ref=f3e11] [cursor=pointer]:
+          - /url: company.html
+          - generic [ref=f3e12]: 🏢
+          - generic [ref=f3e13]: 회사소개
+        - link "🧮 보상" [ref=f3e14] [cursor=pointer]:
+          - /url: rewards.html
+          - generic [ref=f3e15]: 🧮
+          - generic [ref=f3e16]: 보상
+        - link "🗓️ 타임라인" [ref=f3e17] [cursor=pointer]:
+          - /url: timeline.html
+          - generic [ref=f3e18]: 🗓️
+          - generic [ref=f3e19]: 타임라인
+        - link "📑 PPT" [ref=f3e20] [cursor=pointer]:
+          - /url: ppt.html
+          - generic [ref=f3e21]: 📑
+          - generic [ref=f3e22]: PPT
+      - generic [ref=f3e23]:
+        - navigation [ref=f3e24]:
+          - link "⚙️ 설정" [ref=f3e25] [cursor=pointer]:
+            - /url: settings.html
+            - generic [ref=f3e26]: ⚙️
+            - generic [ref=f3e27]: 설정
+        - generic [ref=f3e28]: Aurora ERP · v1.0
+    - generic [ref=f3e29]:
+      - banner [ref=f3e30]:
+        - button "메뉴 열기" [ref=f3e31] [cursor=pointer]: ☰
+        - generic [ref=f3e32]: MESIN DAO / 타임라인
+        - button "라이트 테마로 전환" [ref=f3e33] [cursor=pointer]: 🌙
+      - main [ref=f3e34]:
+        - generic [ref=f3e35]:
+          - generic [ref=f3e36]: Step 2
+          - generic [ref=f3e37]: 전체 기간 타임라인
+          - generic [ref=f3e39]:
+            - generic [ref=f3e41]:
+              - generic [ref=f3e43]: 오늘 ~ 상장 전 · 예시 0일
+              - generic [ref=f3e44]: 🔒 지금 스테이킹 시작 → 이자 선(先)적립 구간
+              - generic [ref=f3e45]:
+                - text: 스테이킹은 지금 바로 시작할 수 있어요. 상장 전까지 매일 0.00개씩 이자가 추가로 쌓입니다.
+                - generic [ref=f3e46]: "예: 0일 남았다면 → 0.00 × 0 = 0 ARRG 추가 적립"
+              - generic [ref=f3e47]: 일일이자만 발생
+            - generic [ref=f3e49]:
+              - generic [ref=f3e51]: 12월 상장일 (미정)
+              - generic [ref=f3e52]: 🚀 15개월 지급 시작
+              - generic [ref=f3e53]: 이 날부터 원금 리워드(월 1회)와 스테이킹 이자(매일)가 동시에 지급되기 시작합니다.
+              - generic [ref=f3e54]:
+                - generic [ref=f3e55]: 월 0.00 ARRG
+                - generic [ref=f3e56]: 일 0.00 ARRG
+            - generic [ref=f3e57]:
+              - generic [ref=f3e59]: 상장일 + 1 ~ 15개월
+              - generic [ref=f3e60]: 📅 매달 15회 반복 지급
+              - generic [ref=f3e61]: 매달 같은 날, 원금 리워드가 15번 지급되고, 그 사이 매일 이자도 계속 쌓입니다.
+              - generic [ref=f3e62]: 15회 완료 시 0 ARRG
+            - generic [ref=f3e64]:
+              - generic [ref=f3e66]: 15개월차 종료
+              - generic [ref=f3e67]: 🏁 지급 완료
+              - generic [ref=f3e68]: 원금 리워드와 이자 지급이 모두 종료됩니다.
+        - generic [ref=f3e69]: MESIN DAO · AURORA · 예시 자료 (실제 지급 조건은 공식 공지 기준)
+  - navigation [ref=f3e70]:
+    - generic [ref=f3e71]:
+      - link "🏠 대시보드" [ref=f3e72] [cursor=pointer]:
+        - /url: index.html
+        - generic [ref=f3e73]: 🏠
+        - generic [ref=f3e74]: 대시보드
+      - link "🏢 회사소개" [ref=f3e75] [cursor=pointer]:
+        - /url: company.html
+        - generic [ref=f3e76]: 🏢
+        - generic [ref=f3e77]: 회사소개
+      - link "🧮 보상" [ref=f3e78] [cursor=pointer]:
+        - /url: rewards.html
+        - generic [ref=f3e79]: 🧮
+        - generic [ref=f3e80]: 보상
+      - link "🗓️ 타임라인" [ref=f3e81] [cursor=pointer]:
+        - /url: timeline.html
+        - generic [ref=f3e82]: 🗓️
+        - generic [ref=f3e83]: 타임라인
+      - link "📑 PPT" [ref=f3e84] [cursor=pointer]:
+        - /url: ppt.html
+        - generic [ref=f3e85]: 📑
+        - generic [ref=f3e86]: PPT

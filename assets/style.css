@@ -270,10 +270,7 @@ section{ padding:20px 18px 2px; }
 .reward-cards .card{ margin-bottom:0; }
 
 /* ---------- Timeline ---------- */
-.timeline-wrap{
-  background:var(--card); border:1px solid var(--line); border-radius:16px;
-  padding:16px 14px 18px; margin-top:2px;
-}
+.timeline-wrap{ margin-top:18px; }
 .tl-track{ position:relative; padding-left:20px; }
 .tl-line{
   position:absolute; left:6px; top:6px; bottom:6px; width:2px;
@@ -457,9 +454,12 @@ body[data-page="settings"] .page-content{ max-width:760px; }
 .quick-card .qc-desc{ font-size:11.5px; color:var(--muted); line-height:1.4; }
 
 /* Company page */
-.company-wrap{ padding:20px; }
+.company-wrap{
+  background:var(--card); border:1px solid var(--line); border-radius:20px;
+  padding:28px 26px; margin:0 20px 20px;
+}
 .company-hero{
-  padding:20px; border-radius:16px; margin-bottom:16px;
+  padding:20px; border-radius:16px; margin-bottom:20px;
   background:linear-gradient(135deg, rgba(139,123,255,0.16), rgba(45,212,191,0.16));
   border:1px solid rgba(139,123,255,0.4);
 }
@@ -473,24 +473,24 @@ body[data-page="settings"] .page-content{ max-width:760px; }
 .company-block p{ font-size:12px; color:var(--muted); line-height:1.6; }
 .company-note{ font-size:10.5px; color:var(--muted); margin-top:6px; }
 
-/* 회사소개 요약 섹션 */
+/* 회사소개 요약 섹션 (모두 .company-wrap 박스 안쪽 요소 - 좌우 여백은 박스 padding이 담당) */
 .company-section-label{
-  padding:0 20px; font-size:10px; letter-spacing:0.13em; color:var(--gold);
+  font-size:10px; letter-spacing:0.13em; color:var(--gold);
   text-transform:uppercase; font-weight:700; margin-bottom:8px;
 }
-.partner-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:10px; padding:0 20px 4px; }
-.partner-card{ background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px; }
+.partner-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:10px; margin-bottom:16px; }
+.partner-card{ background:rgba(var(--wash-rgb),0.03); border:1px solid var(--line); border-radius:14px; padding:16px; }
 .partner-icon{ font-size:22px; margin-bottom:8px; }
 .partner-name{ font-family:'Space Grotesk','Noto Sans KR',sans-serif; font-weight:800; font-size:14px; margin-bottom:2px; }
 .partner-role{ font-size:11px; color:var(--teal); font-weight:700; margin-bottom:8px; }
 .partner-card p{ font-size:12px; color:var(--muted); line-height:1.6; }
 .partner-tagline{
-  margin:4px 20px 20px; padding:12px 16px; text-align:center; font-size:12px; font-weight:700;
+  margin-bottom:24px; padding:12px 16px; text-align:center; font-size:12px; font-weight:700;
   color:var(--text); background:rgba(var(--wash-rgb),0.04); border:1px solid var(--line); border-radius:12px;
 }
 
-.stat-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:10px; padding:0 20px 20px; }
-.stat-card{ background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px; text-align:center; }
+.stat-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:10px; margin-bottom:24px; }
+.stat-card{ background:rgba(var(--wash-rgb),0.03); border:1px solid var(--line); border-radius:12px; padding:14px; text-align:center; }
 .stat-val{
   font-family:'Space Grotesk','Noto Sans KR',sans-serif; font-weight:900; font-size:20px;
   background:linear-gradient(90deg, var(--teal), var(--violet));
@@ -498,16 +498,16 @@ body[data-page="settings"] .page-content{ max-width:760px; }
 }
 .stat-lbl{ font-size:11px; color:var(--muted); margin-top:4px; }
 
-.flywheel-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:10px; padding:0 20px 20px; }
-.flywheel-item{ background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px; }
+.flywheel-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:10px; margin-bottom:24px; }
+.flywheel-item{ background:rgba(var(--wash-rgb),0.03); border:1px solid var(--line); border-radius:12px; padding:14px; }
 .flywheel-num{ font-family:'Space Grotesk',sans-serif; font-weight:900; font-size:13px; color:var(--gold); margin-bottom:4px; }
 .flywheel-title{ font-weight:800; font-size:13.5px; margin-bottom:3px; }
 .flywheel-desc{ font-size:11.5px; color:var(--muted); line-height:1.5; }
 
-.chip-row{ display:flex; flex-wrap:wrap; gap:6px; padding:0 20px 20px; }
+.chip-row{ display:flex; flex-wrap:wrap; gap:6px; margin-bottom:24px; }
 
 .closing-quote{
-  margin:0 20px 20px; padding:20px; text-align:center; border-radius:16px;
+  margin-bottom:20px; padding:20px; text-align:center; border-radius:16px;
   background:linear-gradient(135deg, rgba(139,123,255,0.14), rgba(45,212,191,0.14));
   border:1px solid rgba(139,123,255,0.4);
 }
@@ -518,12 +518,16 @@ body[data-page="settings"] .page-content{ max-width:760px; }
   -webkit-background-clip:text; background-clip:text; color:transparent;
 }
 .company-more-link{
-  display:block; margin:0 20px 20px; text-align:center; font-size:12px; font-weight:700;
+  display:block; margin-bottom:16px; text-align:center; font-size:12px; font-weight:700;
   color:var(--teal); text-decoration:none; padding:10px; border:1px dashed var(--line); border-radius:12px;
 }
 .company-more-link:hover{ border-color:var(--teal); }
 
 .timeline-page{ padding-top:20px; }
+.timeline-panel{
+  background:var(--card); border:1px solid var(--line); border-radius:20px;
+  padding:26px 24px 28px;
+}
 
 /* PPT 뷰어 */
 /* 데스크톱에서 페이지 전체 폭(넓게)은 쓰되, 슬라이드 자체는 16:9 비율을 유지하면서

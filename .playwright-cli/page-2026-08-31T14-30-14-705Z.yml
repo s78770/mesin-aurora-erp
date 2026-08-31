@@ -1,0 +1,148 @@
+- generic [active] [ref=f2e1]:
+  - generic [ref=f2e2]:
+    - complementary [ref=f2e3]:
+      - generic [ref=f2e4]:
+        - generic [ref=f2e5]: M
+        - generic [ref=f2e6]: MESIN DAO
+      - navigation [ref=f2e7]:
+        - link "🏠 대시보드" [ref=f2e8] [cursor=pointer]:
+          - /url: index.html
+          - generic [ref=f2e9]: 🏠
+          - generic [ref=f2e10]: 대시보드
+        - link "🏢 회사소개" [ref=f2e11] [cursor=pointer]:
+          - /url: company.html
+          - generic [ref=f2e12]: 🏢
+          - generic [ref=f2e13]: 회사소개
+        - link "🧮 보상" [ref=f2e14] [cursor=pointer]:
+          - /url: rewards.html
+          - generic [ref=f2e15]: 🧮
+          - generic [ref=f2e16]: 보상
+        - link "🗓️ 타임라인" [ref=f2e17] [cursor=pointer]:
+          - /url: timeline.html
+          - generic [ref=f2e18]: 🗓️
+          - generic [ref=f2e19]: 타임라인
+        - link "📑 PPT" [ref=f2e20] [cursor=pointer]:
+          - /url: ppt.html
+          - generic [ref=f2e21]: 📑
+          - generic [ref=f2e22]: PPT
+      - generic [ref=f2e23]:
+        - navigation [ref=f2e24]:
+          - link "⚙️ 설정" [ref=f2e25] [cursor=pointer]:
+            - /url: settings.html
+            - generic [ref=f2e26]: ⚙️
+            - generic [ref=f2e27]: 설정
+        - generic [ref=f2e28]: Aurora ERP · v1.0
+    - generic [ref=f2e29]:
+      - banner [ref=f2e30]:
+        - button "메뉴 열기" [ref=f2e31] [cursor=pointer]: ☰
+        - generic [ref=f2e32]: MESIN DAO / 회사소개
+        - button "라이트 테마로 전환" [ref=f2e33] [cursor=pointer]: 🌙
+      - main [ref=f2e34]:
+        - generic [ref=f2e35]:
+          - generic [ref=f2e36]:
+            - heading "블록체인 · 웹3.0 · 디파이 글로벌 에코시스템 얼라이언스" [level=2] [ref=f2e37]: 블록체인 · 웹3.0 · 디파이글로벌 에코시스템 얼라이언스
+            - paragraph [ref=f2e38]: MESIN DAO는 4개의 전략 파트너와 함께 기술 · 데이터 · 엔터테인먼트 · 자본을 하나로 연결하는 Web3 생태계입니다. 아시아 주요 시장 수만 명의 회원과 함께 시작해, 최대 9억 명 규모의 잠재 시장을 향해 성장하고 있습니다.
+          - generic [ref=f2e39]: 전략적 파트너 4곳
+          - generic [ref=f2e40]:
+            - generic [ref=f2e41]:
+              - generic [ref=f2e42]: ⚙️
+              - generic [ref=f2e43]: HAUST NETWORK
+              - generic [ref=f2e44]: 기술 구축 · Technology
+              - paragraph [ref=f2e45]: 누구나 DeFi를 쉽고 편리하게 이용할 수 있도록 설계된, 확장성 높은 EVM 호환 레이어2 인프라. MESIN의 핵심 기술 기반입니다.
+            - generic [ref=f2e46]:
+              - generic [ref=f2e47]: 🗄️
+              - generic [ref=f2e48]: CESS
+              - generic [ref=f2e49]: 데이터 저장 · Storage
+              - paragraph [ref=f2e50]: Web3를 위한 효율적이고 안전하며 확장 가능한 데이터 솔루션을 제공하는 탈중앙화 클라우드 스토리지 네트워크.
+            - generic [ref=f2e51]:
+              - generic [ref=f2e52]: 🌀
+              - generic [ref=f2e53]: AURORA ENTERTAINMENT
+              - generic [ref=f2e54]: 엔터파이 연결 · EnterFi
+              - paragraph [ref=f2e55]: 엔터테인먼트 금융(EnterFi)을 선도하며, 전통 산업의 수십억 규모 현금흐름과 탈중앙화 Web3 로드맵을 연결합니다.
+            - generic [ref=f2e56]:
+              - generic [ref=f2e57]: 🚀
+              - generic [ref=f2e58]: GAINS ASSOCIATES
+              - generic [ref=f2e59]: 프로젝트 성장 · VC & 런치패드
+              - paragraph [ref=f2e60]: 초기 단계 Web3 프로젝트에 집중하는 탈중앙화 벤처캐피털이자 인큐베이팅 플랫폼입니다.
+          - generic [ref=f2e61]: HAUST는 구축하고 · CESS는 저장하며 · AURORA는 연결하고 · GAINS는 성장을 이끕니다
+          - generic [ref=f2e62]: GAINS Associates 투자 실적
+          - generic [ref=f2e63]:
+            - generic [ref=f2e64]:
+              - generic [ref=f2e65]: $34M+
+              - generic [ref=f2e66]: 누적 투자 금액
+            - generic [ref=f2e67]:
+              - generic [ref=f2e68]: 344개
+              - generic [ref=f2e69]: 지원 프로젝트
+            - generic [ref=f2e70]:
+              - generic [ref=f2e71]: $1.8B
+              - generic [ref=f2e72]: 운용자산 규모 (AUM)
+            - generic [ref=f2e73]:
+              - generic [ref=f2e74]: 9억 명
+              - generic [ref=f2e75]: 잠재 시장 도달 규모
+          - generic [ref=f2e76]: 지속 가능한 가치 플라이휠
+          - generic [ref=f2e77]:
+            - generic [ref=f2e78]:
+              - generic [ref=f2e79]: 01 · 커뮤니티
+              - generic [ref=f2e80]: 더 많은 참여자
+              - generic [ref=f2e81]: 아시아 주요 시장에서 시작한 글로벌 커뮤니티가 생태계 성장의 출발점입니다.
+            - generic [ref=f2e82]:
+              - generic [ref=f2e83]: 02 · 자본
+              - generic [ref=f2e84]: 더 큰 성장 동력
+              - generic [ref=f2e85]: 참여가 자본의 힘을 만들고, 통합된 자본은 플랫폼 경쟁력을 강화합니다.
+            - generic [ref=f2e86]:
+              - generic [ref=f2e87]: 03 · 기술
+              - generic [ref=f2e88]: 안전한 인프라
+              - generic [ref=f2e89]: Haust Network 기반 위에서 실제 시장의 요구를 Web3 서비스로 구현합니다.
+            - generic [ref=f2e90]:
+              - generic [ref=f2e91]: 04 · 생태계
+              - generic [ref=f2e92]: 실질적인 활용
+              - generic [ref=f2e93]: 실사용이 수요를 만들고, 그 가치는 다시 커뮤니티로 환원됩니다.
+          - generic [ref=f2e94]: Aurora 생태계 제품
+          - generic [ref=f2e95]:
+            - generic [ref=f2e96]: Aurora.game · BetFi
+            - generic [ref=f2e97]: Aurora Mall
+            - generic [ref=f2e98]: Aurora Live
+            - generic [ref=f2e99]: LuckyBox
+            - generic [ref=f2e100]: 예측 시장
+          - generic [ref=f2e101]: 글로벌 커뮤니티
+          - paragraph [ref=f2e102]: MESIN DAO는 아시아 주요 시장에서 수만 명의 회원과 함께 시작했습니다.
+          - generic [ref=f2e103]:
+            - generic [ref=f2e104]: 말레이시아
+            - generic [ref=f2e105]: 싱가포르
+            - generic [ref=f2e106]: 파키스탄
+            - generic [ref=f2e107]: 일본
+            - generic [ref=f2e108]: 한국
+            - generic [ref=f2e109]: 중국
+            - generic [ref=f2e110]: 인도네시아
+            - generic [ref=f2e111]: 베트남
+            - generic [ref=f2e112]: 태국
+            - generic [ref=f2e113]: 인도
+          - generic [ref=f2e114]:
+            - paragraph [ref=f2e115]: 역사의 모든 전환점에서, 승리하는 사람은 가장 똑똑한 사람이 아닙니다.그들은 바로 먼저 움직이는 사람들입니다.
+            - generic [ref=f2e116]: 감사합니다 — MESIN DAO
+          - link "📑 전체 소개자료(PPT) 30장 자세히 보기 →" [ref=f2e117] [cursor=pointer]:
+            - /url: ppt.html
+          - generic [ref=f2e118]: "* 위 요약은 회사 소개 PPT 자료를 바탕으로 재구성한 것이며, 실제 조건은 공식 채널의 공지를 기준으로 합니다."
+        - generic [ref=f2e119]: MESIN DAO · AURORA · 예시 자료 (실제 지급 조건은 공식 공지 기준)
+  - navigation [ref=f2e120]:
+    - generic [ref=f2e121]:
+      - link "🏠 대시보드" [ref=f2e122] [cursor=pointer]:
+        - /url: index.html
+        - generic [ref=f2e123]: 🏠
+        - generic [ref=f2e124]: 대시보드
+      - link "🏢 회사소개" [ref=f2e125] [cursor=pointer]:
+        - /url: company.html
+        - generic [ref=f2e126]: 🏢
+        - generic [ref=f2e127]: 회사소개
+      - link "🧮 보상" [ref=f2e128] [cursor=pointer]:
+        - /url: rewards.html
+        - generic [ref=f2e129]: 🧮
+        - generic [ref=f2e130]: 보상
+      - link "🗓️ 타임라인" [ref=f2e131] [cursor=pointer]:
+        - /url: timeline.html
+        - generic [ref=f2e132]: 🗓️
+        - generic [ref=f2e133]: 타임라인
+      - link "📑 PPT" [ref=f2e134] [cursor=pointer]:
+        - /url: ppt.html
+        - generic [ref=f2e135]: 📑
+        - generic [ref=f2e136]: PPT

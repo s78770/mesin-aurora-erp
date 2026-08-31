@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<script>try{if(localStorage.getItem('aurora_theme')==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MESIN DAO · Aurora ERP · 참여자 관리</title>
+<link rel="stylesheet" href="assets/style.css">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0c1424">
+<link rel="icon" type="image/png" href="assets/icons/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Aurora ERP">
+</head>
+<body data-page="participants">
+<div class="app" id="app">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <div class="sidebar-logo-mark">M</div>
+      <span>MESIN DAO</span>
+    </div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+    <div class="sidebar-bottom">
+      <nav class="sidebar-bottom-nav" id="sidebarBottomNav"></nav>
+      <div class="sidebar-foot">Aurora ERP · v1.0</div>
+    </div>
+  </aside>
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+  <div class="main">
+    <header class="topbar">
+      <button type="button" class="burger" id="sidebarToggle" aria-label="메뉴 열기">☰</button>
+      <div class="breadcrumb">MESIN DAO / <b id="breadcrumbLabel">참여자 관리</b></div>
+      <button type="button" class="theme-toggle" id="themeToggle" aria-label="테마 전환">🌙</button>
+      <div class="topbar-right">Aurora 패키지 관리</div>
+    </header>
+
+    <main class="page-content">
+
+      <div class="company-wrap">
+        <div class="company-section-label">참여자 현황</div>
+        <div class="stat-grid">
+          <div class="stat-card"><div class="stat-val num" id="pStatCount">0</div><div class="stat-lbl">참여자 수</div></div>
+          <div class="stat-card"><div class="stat-val num" id="pStatAmount">$0</div><div class="stat-lbl">총 참여금</div></div>
+          <div class="stat-card"><div class="stat-val num" id="pStatArrg">0</div><div class="stat-lbl">총 예상 지급 ARRG</div></div>
+        </div>
+
+        <div class="company-section-label">참여자 추가</div>
+        <div class="calc" style="margin-top:0; margin-bottom:24px;">
+          <div class="calc-row2">
+            <div class="field">
+              <label>이름 / 지갑주소</label>
+              <div class="input-row">
+                <input type="text" id="pName" placeholder="예: 0xAbc... 또는 홍길동">
+              </div>
+            </div>
+          </div>
+          <div class="calc-row2">
+            <div class="field">
+              <label>참여금액</label>
+              <div class="input-row">
+                <span class="prefix">$</span>
+                <input type="number" id="pAmount" min="0" step="100" inputmode="numeric" placeholder="0">
+              </div>
+            </div>
+            <div class="field">
+              <label>상장까지 남은 일수</label>
+              <div class="input-row">
+                <input type="number" id="pDays" value="0" min="0" step="1" inputmode="numeric">
+                <span class="suffix">일</span>
+              </div>
+            </div>
+          </div>
+          <div class="presets" style="margin-top:0;">
+            <button type="button" class="ppt-nav-btn" id="pAddBtn">+ 참여자 추가</button>
+            <button type="button" class="ppt-nav-btn" id="pExportBtn">CSV로 내보내기</button>
+          </div>
+        </div>
+
+        <div class="company-section-label">참여자 목록</div>
+        <div class="table-scroll" id="pTableWrap" hidden>
+          <table class="p-table">
+            <thead>
+              <tr>
+                <th>이름 / 지갑</th>
+                <th>참여금</th>
+                <th>남은 일수</th>
+                <th>ARRG 전환</th>
+                <th>총 예상 수령</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="pTableBody"></tbody>
+          </table>
+        </div>
+        <div class="company-note" id="pEmptyHint">아직 등록된 참여자가 없습니다. 위에서 이름과 참여금액을 입력하고 추가해보세요.</div>
+        <div class="company-note">* 참여자 목록은 이 브라우저에만 저장됩니다(서버 미연동). 다른 기기와 공유하려면 CSV로 내보내 전달하세요.</div>
+      </div>
+
+      <div class="foot">MESIN DAO · AURORA · 예시 자료 (실제 지급 조건은 공식 공지 기준)</div>
+    </main>
+  </div><!-- /main -->
+</div><!-- /app -->
+<nav class="bottom-nav" id="bottomNav"></nav>
+
+<script src="assets/sidebar.js"></script>
+<script src="assets/participants.js"></script>
+</body>
+</html>

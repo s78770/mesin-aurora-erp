@@ -523,6 +523,26 @@ body[data-page="settings"] .page-content{ max-width:760px; }
 }
 .company-more-link:hover{ border-color:var(--teal); }
 
+/* 참여자 관리 테이블 */
+.table-scroll{ overflow-x:auto; border:1px solid var(--line); border-radius:14px; margin-bottom:16px; }
+.p-table{ width:100%; border-collapse:collapse; font-size:12.5px; white-space:nowrap; }
+.p-table th, .p-table td{ padding:10px 14px; text-align:left; }
+.p-table thead th{
+  background:rgba(var(--wash-rgb),0.05); color:var(--muted); font-size:10.5px;
+  text-transform:uppercase; letter-spacing:0.05em; border-bottom:1px solid var(--line);
+  font-weight:700;
+}
+.p-table tbody tr{ border-bottom:1px solid var(--line); }
+.p-table tbody tr:last-child{ border-bottom:none; }
+.p-table tbody tr:hover{ background:rgba(var(--wash-rgb),0.03); }
+.p-table td.num{ font-family:'Space Grotesk','Noto Sans KR',sans-serif; font-weight:700; }
+.p-del-btn{
+  background:transparent; border:1px solid var(--line); color:var(--muted);
+  border-radius:8px; padding:5px 10px; font-size:11px; font-weight:700; cursor:pointer;
+  font-family:'Noto Sans KR',sans-serif;
+}
+.p-del-btn:hover{ border-color:#ef4444; color:#ef4444; }
+
 .timeline-panel{
   background:var(--card); border:1px solid var(--line); border-radius:20px;
   padding:26px 24px 28px; margin:0 20px 20px;

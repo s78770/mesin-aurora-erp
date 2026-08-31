@@ -9,9 +9,9 @@
     { id: 'company', icon: '🏢', label: '회사소개', href: 'company.html' },
     { id: 'rewards', icon: '🧮', label: '보상', href: 'rewards.html' },
     { id: 'timeline', icon: '🗓️', label: '타임라인', href: 'timeline.html' },
-    { id: 'ppt', icon: '📑', label: 'PPT', href: 'ppt.html' }
-    // 새 메뉴 예시:
-    // { id: 'participants', icon: '👥', label: '참여자 관리', href: 'participants.html' },
+    { id: 'ppt', icon: '📑', label: 'PPT', href: 'ppt.html' },
+    { id: 'participants', icon: '👥', label: '참여자 관리', href: 'participants.html' }
+    // 새 메뉴를 더 추가하려면 위와 같은 형식으로 한 줄만 더 넣으면 됩니다.
   ];
 
   // 하단에 고정되는 항목 (설정 등). 메뉴가 늘어나도 항상 맨 아래 유지됩니다.

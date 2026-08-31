@@ -248,7 +248,7 @@ section{ padding:20px 18px 2px; }
 /* 좁은 화면(<1080px)에서는 기존과 동일하게 히어로(입력) → 카드(결과) 순서로 세로 쌓임.
    넓은 화면에서는 왼쪽에 입력 히어로를 고정(sticky)하고, 오른쪽에 결과 카드를 나란히 배치해
    입력을 바꾸면서 바로 옆에서 결과를 확인할 수 있게 함. */
-.rewards-grid{ display:block; }
+.rewards-grid{ display:block; margin:0 20px 20px; }
 .rewards-col-hero .hero{ margin-top:0; }
 @media (min-width:1080px){
   .rewards-grid{
@@ -388,7 +388,7 @@ section{ padding:20px 18px 2px; }
 .breadcrumb b{ color:var(--text); font-weight:700; }
 .topbar-right{ font-size:11px; color:var(--muted); }
 
-.page-content{ flex:1; max-width:1180px; width:100%; margin:0 auto; padding-bottom:20px; }
+.page-content{ flex:1; max-width:1180px; width:100%; margin:0 auto; padding-top:20px; padding-bottom:20px; }
 
 /* 페이지별 콘텐츠 폭 — 데스크톱에서 화면을 얼마나 넓게 쓸지는 페이지 성격에 따라 다르게 판단.
    대시보드/회사소개: 카드형 그리드가 많아 넓게 써도 잘 채워짐.
@@ -432,7 +432,7 @@ body[data-page="settings"] .page-content{ max-width:760px; }
 
 /* Dashboard */
 .dash-welcome{
-  padding:22px 20px; border-radius:16px; margin:20px;
+  padding:22px 20px; border-radius:16px; margin:0 20px 20px;
   background:radial-gradient(120% 90% at 50% -20%, rgba(139,123,255,0.25), transparent 60%), linear-gradient(180deg, var(--bg2), var(--bg));
   border:1px solid var(--line);
 }
@@ -523,10 +523,9 @@ body[data-page="settings"] .page-content{ max-width:760px; }
 }
 .company-more-link:hover{ border-color:var(--teal); }
 
-.timeline-page{ padding-top:20px; }
 .timeline-panel{
   background:var(--card); border:1px solid var(--line); border-radius:20px;
-  padding:26px 24px 28px;
+  padding:26px 24px 28px; margin:0 20px 20px;
 }
 
 /* PPT 뷰어 */
@@ -536,7 +535,7 @@ body[data-page="settings"] .page-content{ max-width:760px; }
 body[data-page="ppt"] .page-content{ max-width:1440px; }
 body[data-page="ppt"] .foot{ margin-top:18px; margin-bottom:18px; }
 
-.ppt-viewer{ padding:20px; }
+.ppt-viewer{ padding:0 20px 20px; }
 .ppt-layout{ display:flex; flex-direction:column; gap:16px; }
 .ppt-main{ flex:1; min-width:0; margin:0 auto; width:100%; }
 .ppt-thumbs{ display:none; }
@@ -625,7 +624,8 @@ body[data-page="ppt"] .foot{ margin-top:18px; margin-bottom:18px; }
   h1{ font-size:18px; }
   section{ padding:16px 14px 2px; }
   .calc-row2{ flex-direction:column; gap:10px; }
-  .dash-welcome{ margin:14px; padding:18px 16px; }
+  .page-content{ padding-top:14px; }
+  .dash-welcome{ margin:0 14px 14px; padding:18px 16px; }
   .dash-grid{ grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); padding:0 14px 14px; }
   .quick-links{ grid-template-columns:1fr; padding:0 14px 14px; }
   .company-wrap{ padding:14px; }

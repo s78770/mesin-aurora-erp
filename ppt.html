@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<script>try{if(localStorage.getItem('aurora_theme')==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MESIN DAO · Aurora ERP · PPT</title>
+<link rel="stylesheet" href="assets/style.css">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0c1424">
+<link rel="icon" type="image/png" href="assets/icons/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Aurora ERP">
+</head>
+<body data-page="ppt">
+<div class="app" id="app">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <div class="sidebar-logo-mark">M</div>
+      <span>MESIN DAO</span>
+    </div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+    <div class="sidebar-bottom">
+      <nav class="sidebar-bottom-nav" id="sidebarBottomNav"></nav>
+      <div class="sidebar-foot">Aurora ERP · v1.0</div>
+    </div>
+  </aside>
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+  <div class="main">
+    <header class="topbar">
+      <button type="button" class="burger" id="sidebarToggle" aria-label="메뉴 열기">☰</button>
+      <div class="breadcrumb">MESIN DAO / <b id="breadcrumbLabel">PPT</b></div>
+      <button type="button" class="theme-toggle" id="themeToggle" aria-label="테마 전환">🌙</button>
+      <div class="topbar-right">Aurora 패키지 관리</div>
+    </header>
+
+    <main class="page-content">
+
+      <div class="ppt-viewer">
+        <div class="ppt-stage" id="pptStage">
+          <img id="pptImage" src="assets/ppt-slides/slide-01.jpg" alt="슬라이드 1">
+        </div>
+        <div class="ppt-controls">
+          <button type="button" class="ppt-nav-btn" id="pptPrev" aria-label="이전 슬라이드">‹ 이전</button>
+          <div class="ppt-counter"><span id="pptCurrent">1</span> / <span id="pptTotal">30</span></div>
+          <button type="button" class="ppt-nav-btn" id="pptNext" aria-label="다음 슬라이드">다음 ›</button>
+        </div>
+        <div class="ppt-hint">키보드 ← → 또는 화면을 좌우로 스와이프해서 넘길 수 있어요.</div>
+      </div>
+
+      <div class="foot">MESIN DAO · AURORA · 예시 자료 (실제 지급 조건은 공식 공지 기준)</div>
+    </main>
+  </div><!-- /main -->
+</div><!-- /app -->
+<nav class="bottom-nav" id="bottomNav"></nav>
+
+<script src="assets/sidebar.js"></script>
+<script src="assets/ppt-viewer.js"></script>
+</body>
+</html>

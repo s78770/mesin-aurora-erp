@@ -8,7 +8,8 @@
     { id: 'dashboard', icon: '🏠', label: '대시보드', href: 'index.html' },
     { id: 'company', icon: '🏢', label: '회사소개', href: 'company.html' },
     { id: 'rewards', icon: '🧮', label: '보상', href: 'rewards.html' },
-    { id: 'timeline', icon: '🗓️', label: '타임라인', href: 'timeline.html' }
+    { id: 'timeline', icon: '🗓️', label: '타임라인', href: 'timeline.html' },
+    { id: 'ppt', icon: '📑', label: 'PPT', href: 'ppt.html' }
     // 새 메뉴 예시:
     // { id: 'participants', icon: '👥', label: '참여자 관리', href: 'participants.html' },
   ];

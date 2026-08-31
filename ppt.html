@@ -41,15 +41,20 @@
     <main class="page-content">
 
       <div class="ppt-viewer">
-        <div class="ppt-stage" id="pptStage">
-          <img id="pptImage" src="assets/ppt-slides/slide-01.jpg" alt="슬라이드 1">
+        <div class="ppt-layout">
+          <div class="ppt-main">
+            <div class="ppt-stage" id="pptStage">
+              <img id="pptImage" src="assets/ppt-slides/slide-01.jpg" alt="슬라이드 1">
+            </div>
+            <div class="ppt-controls">
+              <button type="button" class="ppt-nav-btn" id="pptPrev" aria-label="이전 슬라이드">‹ 이전</button>
+              <div class="ppt-counter"><span id="pptCurrent">1</span> / <span id="pptTotal">30</span></div>
+              <button type="button" class="ppt-nav-btn" id="pptNext" aria-label="다음 슬라이드">다음 ›</button>
+            </div>
+            <div class="ppt-hint">키보드 ← → 또는 화면을 좌우로 스와이프해서 넘길 수 있어요.</div>
+          </div>
+          <aside class="ppt-thumbs" id="pptThumbs" aria-label="슬라이드 목록"></aside>
         </div>
-        <div class="ppt-controls">
-          <button type="button" class="ppt-nav-btn" id="pptPrev" aria-label="이전 슬라이드">‹ 이전</button>
-          <div class="ppt-counter"><span id="pptCurrent">1</span> / <span id="pptTotal">30</span></div>
-          <button type="button" class="ppt-nav-btn" id="pptNext" aria-label="다음 슬라이드">다음 ›</button>
-        </div>
-        <div class="ppt-hint">키보드 ← → 또는 화면을 좌우로 스와이프해서 넘길 수 있어요.</div>
       </div>
 
       <div class="foot">MESIN DAO · AURORA · 예시 자료 (실제 지급 조건은 공식 공지 기준)</div>

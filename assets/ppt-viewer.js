@@ -16,6 +16,7 @@
     const totalEl = document.getElementById('pptTotal');
     const prevBtn = document.getElementById('pptPrev');
     const nextBtn = document.getElementById('pptNext');
+    const thumbsWrap = document.getElementById('pptThumbs');
     if (!stage || !img) return;
 
     let current = 1;
@@ -26,6 +27,36 @@
       pre.src = srcFor(n);
     }
 
+    // 넓은 화면(>=1300px)에서만 CSS로 노출되는 축소판 목록. 좁은 화면에서도 DOM 자체는
+    // 만들어두되 CSS가 숨기므로(.ppt-thumbs{display:none}) 별도 분기 없이 항상 생성.
+    function buildThumbs() {
+      if (!thumbsWrap || thumbsWrap.childElementCount) return;
+      for (let n = 1; n <= TOTAL; n++) {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'ppt-thumb';
+        btn.dataset.n = String(n);
+        btn.setAttribute('aria-label', '슬라이드 ' + n + '번으로 이동');
+        btn.innerHTML =
+          '<span class="tn-num">' + pad2(n) + '</span>' +
+          '<img loading="lazy" src="' + srcFor(n) + '" alt="">';
+        btn.addEventListener('click', function () { go(n); });
+        thumbsWrap.appendChild(btn);
+      }
+    }
+
+    function syncThumbs() {
+      if (!thumbsWrap) return;
+      const items = thumbsWrap.querySelectorAll('.ppt-thumb');
+      items.forEach(function (t) {
+        const active = Number(t.dataset.n) === current;
+        t.classList.toggle('active', active);
+        if (active && typeof t.scrollIntoView === 'function') {
+          t.scrollIntoView({ block: 'nearest' });
+        }
+      });
+    }
+
     function render() {
       img.src = srcFor(current);
       img.alt = '슬라이드 ' + current;
@@ -34,6 +65,7 @@
       if (nextBtn) nextBtn.disabled = current >= TOTAL;
       preload(current + 1);
       preload(current - 1);
+      syncThumbs();
     }
 
     function go(n) {
@@ -42,6 +74,7 @@
     }
 
     if (totalEl) totalEl.textContent = TOTAL;
+    buildThumbs();
     if (prevBtn) prevBtn.addEventListener('click', function () { go(current - 1); });
     if (nextBtn) nextBtn.addEventListener('click', function () { go(current + 1); });
 

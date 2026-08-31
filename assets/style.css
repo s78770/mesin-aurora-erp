@@ -543,7 +543,7 @@ body[data-page="ppt"] .foot{ margin-top:18px; margin-bottom:18px; }
 
 .ppt-stage{
   position:relative;
-  width:min(100%, calc((100vh - 210px) * 16 / 9));
+  width:min(100%, calc((100vh - 185px) * 16 / 9));
   aspect-ratio:16/9;
   margin:0 auto;
   background:var(--card); border:1px solid var(--line); border-radius:14px;
@@ -571,9 +571,9 @@ body[data-page="ppt"] .foot{ margin-top:18px; margin-bottom:18px; }
 /* 아주 넓은 화면(>=1300px)에서만 오른쪽에 슬라이드 축소판 목록(레일)을 노출.
    여백을 그냥 비워두는 대신 탐색에 실제로 쓸모 있는 UI로 채움. 좁은 화면에서는 숨김. */
 @media (min-width:1300px){
-  .ppt-layout{ flex-direction:row; align-items:flex-start; justify-content:center; }
-  .ppt-main{ max-width:1120px; margin:0; }
-  .ppt-stage{ width:min(100%, calc((100vh - 210px) * 16 / 9)); margin:0; }
+  .ppt-layout{ flex-direction:row; align-items:flex-start; justify-content:center; gap:12px; }
+  .ppt-main{ max-width:1180px; margin:0; }
+  .ppt-stage{ width:min(100%, calc((100vh - 185px) * 16 / 9)); margin:0; }
   .ppt-thumbs{
     display:flex; flex-direction:column; gap:6px;
     width:168px; flex:0 0 168px;

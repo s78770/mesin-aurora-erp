@@ -74,12 +74,9 @@
           </div>
         </div>
       </div>
-      <div class="presets" style="margin-top:0;">
-        <button class="preset-btn" data-val="3000">$3,000</button>
-        <button class="preset-btn" data-val="5000">$5,000</button>
-        <button class="preset-btn" data-val="10000">$10,000</button>
-        <button class="preset-btn" data-val="15000">$15,000</button>
-        <button class="preset-btn" data-val="30000">$30,000</button>
+      <div class="presets" style="margin-top:0;" id="presetContainer"></div>
+      <div class="presets" style="margin-top:8px;">
+        <button type="button" class="preset-btn" id="shareLinkBtn">🔗 공유 링크 복사</button>
       </div>
     </div>
 
@@ -161,6 +158,13 @@
     <div class="note">
       ⚠️ 참고: 실제 상장일이 확정되면 ‘상장 전 이자 보너스’ 일수는 정확한 날짜 수에 따라 달라집니다. 스테이킹 구간(APY)은 입력한 참여금에 따라 자동으로 바뀝니다.
     </div>
+  </section>
+
+  <section style="padding-top:4px;">
+    <div class="section-label">빠른 비교</div>
+    <div class="section-title">참여금 3가지를 나란히 비교해보세요</div>
+    <div class="section-desc">아래 3개 금액을 바꾸면, 위에서 입력한 “상장까지 남은 일수”를 기준으로 각각의 총 예상 수령액을 계산합니다.</div>
+    <div class="compare-grid" id="compareGrid"></div>
   </section>
   </div><!-- /rewards-col-detail -->
   </div><!-- /rewards-grid -->

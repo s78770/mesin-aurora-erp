@@ -2,8 +2,13 @@
 // amountInput/daysInput 이 있는 페이지(rewards.html)에서 값을 바꾸면
 // localStorage 에 저장되고, 다른 페이지(timeline.html 등)에서도
 // 같은 값을 불러와 화면에 반영합니다. (페이지 이동 시 값 유지)
+// URL에 ?amount=10000&days=200 을 붙이면 그 값으로 열려서 결과를 공유할 수 있습니다.
 (function () {
   const STORAGE_KEY = 'aurora_calc_state_v1';
+  const PRESETS_KEY = 'aurora_presets_v1';
+  const COMPARE_KEY = 'aurora_compare_amounts_v1';
+  const DEFAULT_PRESETS = [3000, 5000, 10000, 15000, 30000];
+  const DEFAULT_COMPARE = [5000, 10000, 20000];
 
   function loadState() {
     try {
@@ -25,6 +30,30 @@
     } catch (e) {
       /* localStorage 사용 불가 시 무시 */
     }
+  }
+
+  function loadPresets() {
+    try {
+      const raw = localStorage.getItem(PRESETS_KEY);
+      const arr = raw ? JSON.parse(raw) : null;
+      if (Array.isArray(arr) && arr.length === 5) return arr;
+    } catch (e) {}
+    return DEFAULT_PRESETS.slice();
+  }
+
+  function loadCompareAmounts() {
+    try {
+      const raw = localStorage.getItem(COMPARE_KEY);
+      const arr = raw ? JSON.parse(raw) : null;
+      if (Array.isArray(arr) && arr.length === 3) return arr;
+    } catch (e) {}
+    return DEFAULT_COMPARE.slice();
+  }
+
+  function saveCompareAmounts(arr) {
+    try {
+      localStorage.setItem(COMPARE_KEY, JSON.stringify(arr));
+    } catch (e) {}
   }
 
   function fmt(n, decimals) {
@@ -131,7 +160,7 @@
     setText('sumTotal', '≈ ' + fmt(r.grandTotal));
 
     // ---- preset 버튼 active 표시 (rewards) ----
-    document.querySelectorAll('.preset-btn').forEach(function (btn) {
+    document.querySelectorAll('.preset-btn[data-val]').forEach(function (btn) {
       btn.classList.toggle('active', parseFloat(btn.dataset.val) === r.amount);
     });
   }
@@ -144,27 +173,147 @@
     const state = { amount: isNaN(amount) ? 0 : amount, days: isNaN(days) ? 0 : days };
     saveState(state);
     render(compute(state.amount, state.days));
+    renderCompare();
+  }
+
+  // ---- 프리셋 버튼 (설정 페이지에서 편집한 값을 반영) ----
+  function renderPresets(amountInput) {
+    const container = document.getElementById('presetContainer');
+    if (!container) return;
+    container.innerHTML = '';
+    loadPresets().forEach(function (val) {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'preset-btn';
+      btn.dataset.val = val;
+      btn.textContent = '$' + fmt(val);
+      btn.addEventListener('click', function () {
+        if (amountInput) amountInput.value = val;
+        recalcFromInputs();
+      });
+      container.appendChild(btn);
+    });
+  }
+
+  // ---- 공유 링크 ----
+  function copyToClipboard(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      return navigator.clipboard.writeText(text);
+    }
+    return new Promise(function (resolve, reject) {
+      try {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.focus();
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        resolve();
+      } catch (e) {
+        reject(e);
+      }
+    });
+  }
+
+  function initShareButton(amountInput, daysInput) {
+    const btn = document.getElementById('shareLinkBtn');
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      const amount = amountInput ? amountInput.value : 0;
+      const days = daysInput ? daysInput.value : 0;
+      const url =
+        location.origin + location.pathname + '?amount=' + encodeURIComponent(amount) + '&days=' + encodeURIComponent(days);
+      copyToClipboard(url)
+        .then(function () {
+          const original = btn.textContent;
+          btn.textContent = '✓ 링크 복사됨';
+          setTimeout(function () {
+            btn.textContent = original;
+          }, 1500);
+        })
+        .catch(function () {
+          window.prompt('아래 링크를 복사하세요:', url);
+        });
+    });
+  }
+
+  // URL 의 ?amount=&days= 값이 있으면 그 값으로 초기 상태를 덮어씀 (공유 링크로 접속한 경우).
+  function readUrlOverride() {
+    try {
+      const params = new URLSearchParams(location.search);
+      if (!params.has('amount') && !params.has('days')) return null;
+      const amount = parseFloat(params.get('amount'));
+      const days = parseFloat(params.get('days'));
+      return {
+        amount: isNaN(amount) || amount < 0 ? 0 : amount,
+        days: isNaN(days) || days < 0 ? 0 : days,
+      };
+    } catch (e) {
+      return null;
+    }
+  }
+
+  // ---- 빠른 비교 (참여금 3개를 나란히) ----
+  function renderCompare() {
+    const grid = document.getElementById('compareGrid');
+    if (!grid) return;
+    const daysInput = document.getElementById('daysInput');
+    const days = daysInput ? parseFloat(daysInput.value) : loadState().days;
+    const amounts = loadCompareAmounts();
+
+    grid.innerHTML = '';
+    amounts.forEach(function (amount, idx) {
+      const r = compute(amount, isNaN(days) ? 0 : days);
+      const card = document.createElement('div');
+      card.className = 'compare-card';
+      card.innerHTML =
+        '<div class="input-row"><span class="prefix">$</span><input type="number" class="compare-input" data-idx="' +
+        idx +
+        '" value="' +
+        amount +
+        '" min="0" step="100"></div>' +
+        '<div class="compare-total">≈ ' + fmt(r.grandTotal) + ' <span class="compare-unit">ARRG</span></div>' +
+        '<div class="compare-sub">' + fmt(r.arrg) + ' ARRG 전환 · 월 ' + fmt(r.monthly, 2) + ' ARRG</div>';
+      grid.appendChild(card);
+    });
+
+    grid.querySelectorAll('.compare-input').forEach(function (input) {
+      input.addEventListener('input', function () {
+        const idx = Number(input.dataset.idx);
+        const val = parseFloat(input.value);
+        const current = loadCompareAmounts();
+        current[idx] = isNaN(val) || val < 0 ? 0 : val;
+        saveCompareAmounts(current);
+        renderCompare();
+      });
+    });
   }
 
   function init() {
-    const state = loadState();
+    let state = loadState();
+    const urlState = readUrlOverride();
+    if (urlState) {
+      state = urlState;
+      saveState(state);
+    }
+
     const amountInput = document.getElementById('amountInput');
     const daysInput = document.getElementById('daysInput');
 
     if (amountInput) amountInput.value = state.amount;
     if (daysInput) daysInput.value = state.days;
 
+    renderPresets(amountInput);
+    initShareButton(amountInput, daysInput);
+
     if (amountInput) amountInput.addEventListener('input', recalcFromInputs);
     if (daysInput) daysInput.addEventListener('input', recalcFromInputs);
 
-    document.querySelectorAll('.preset-btn').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        if (amountInput) amountInput.value = btn.dataset.val;
-        recalcFromInputs();
-      });
-    });
-
     render(compute(state.amount, state.days));
+    renderCompare();
   }
 
   document.addEventListener('DOMContentLoaded', init);

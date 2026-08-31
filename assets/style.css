@@ -560,6 +560,35 @@ body[data-page="settings"] .page-content{ max-width:760px; }
 .p-gate-card .input-row{ margin-bottom:12px; text-align:left; }
 .p-gate-error{ margin-top:10px; font-size:11.5px; color:#ef4444; }
 
+/* 보상 페이지 - 빠른 비교 */
+.compare-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px; }
+.compare-card{ background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px; }
+.compare-card .input-row{ margin-bottom:10px; }
+.compare-total{
+  font-family:'Space Grotesk','Noto Sans KR',sans-serif; font-weight:900; font-size:16px;
+  background:linear-gradient(90deg, var(--teal), var(--violet));
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+.compare-unit{ font-size:11px; -webkit-text-fill-color:var(--muted); color:var(--muted); }
+.compare-sub{ margin-top:4px; font-size:10.5px; color:var(--muted); }
+
+/* 대시보드 - 상장 카운트다운 */
+.countdown-card{
+  margin:0 20px 20px; padding:20px; border-radius:16px; text-align:center;
+  background:linear-gradient(135deg, rgba(139,123,255,0.16), rgba(45,212,191,0.16));
+  border:1px solid rgba(139,123,255,0.4);
+}
+.countdown-label{ font-size:11px; color:var(--muted); font-weight:700; margin-bottom:8px; }
+.countdown-value{
+  font-family:'Space Grotesk','Noto Sans KR',sans-serif; font-weight:900; font-size:32px;
+  background:linear-gradient(90deg, var(--teal), var(--violet));
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+.countdown-date{ margin-top:6px; font-size:12px; color:var(--muted); }
+.countdown-empty{ font-size:12.5px; color:var(--muted); line-height:1.6; }
+.countdown-empty a{ color:var(--teal); text-decoration:none; font-weight:700; }
+.countdown-empty a:hover{ text-decoration:underline; }
+
 .timeline-panel{
   background:var(--card); border:1px solid var(--line); border-radius:20px;
   padding:26px 24px 28px; margin:0 20px 20px;

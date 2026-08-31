@@ -40,7 +40,20 @@
 
     <main class="page-content">
 
-      <div class="company-wrap">
+      <div class="p-gate" id="pGate">
+        <div class="p-gate-card">
+          <div class="p-gate-icon">🔒</div>
+          <h2>참여자 관리 접근</h2>
+          <p>공유 비밀번호를 입력하세요.</p>
+          <div class="input-row">
+            <input type="password" id="pGatePassword" placeholder="비밀번호">
+          </div>
+          <button type="button" class="ppt-nav-btn" id="pGateSubmit" style="width:100%;">입장</button>
+          <div class="p-gate-error" id="pGateError" hidden>비밀번호가 올바르지 않습니다.</div>
+        </div>
+      </div>
+
+      <div class="company-wrap" id="pContent" hidden>
         <div class="company-section-label">참여자 현황</div>
         <div class="stat-grid">
           <div class="stat-card"><div class="stat-val num" id="pStatCount">0</div><div class="stat-lbl">참여자 수</div></div>
@@ -81,6 +94,8 @@
         </div>
 
         <div class="company-section-label">참여자 목록</div>
+        <div class="company-note" id="pLoadingHint">불러오는 중...</div>
+        <div class="company-note" id="pErrorHint" hidden>목록을 불러오지 못했습니다. 네트워크 상태를 확인하고 새로고침해주세요.</div>
         <div class="table-scroll" id="pTableWrap" hidden>
           <table class="p-table">
             <thead>
@@ -96,8 +111,8 @@
             <tbody id="pTableBody"></tbody>
           </table>
         </div>
-        <div class="company-note" id="pEmptyHint">아직 등록된 참여자가 없습니다. 위에서 이름과 참여금액을 입력하고 추가해보세요.</div>
-        <div class="company-note">* 참여자 목록은 이 브라우저에만 저장됩니다(서버 미연동). 다른 기기와 공유하려면 CSV로 내보내 전달하세요.</div>
+        <div class="company-note" id="pEmptyHint" hidden>아직 등록된 참여자가 없습니다. 위에서 이름과 참여금액을 입력하고 추가해보세요.</div>
+        <div class="company-note">* 참여자 목록은 Supabase에 저장되어 이 링크에 접속하는 모든 사람이 함께 봅니다. 공유 비밀번호를 아는 사람만 접근하세요.</div>
       </div>
 
       <div class="foot">MESIN DAO · AURORA · 예시 자료 (실제 지급 조건은 공식 공지 기준)</div>

@@ -587,6 +587,42 @@ body[data-page="settings"] .page-content{ max-width:760px; }
 .countdown-empty a{ color:var(--teal); text-decoration:none; font-weight:700; }
 .countdown-empty a:hover{ text-decoration:underline; }
 
+/* 대시보드 - 섹션 레이블 (사이드바와 동일한 20px 좌우 여백) */
+.dash-section-label{
+  padding:0 20px 6px; font-size:10px; letter-spacing:0.13em; color:var(--gold);
+  text-transform:uppercase; font-weight:700;
+}
+.dash-section-link{ float:right; text-transform:none; letter-spacing:0; color:var(--teal); font-weight:700; text-decoration:none; }
+.dash-section-link:hover{ text-decoration:underline; }
+
+/* 대시보드 - 요약 카드 (참여자 수 / 누적 지급액 등) */
+.dash-summary-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px; padding:0 20px 20px; }
+.dash-summary-card{ background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px; }
+.dash-summary-card .lbl{ font-size:11px; color:var(--muted); margin-bottom:6px; }
+.dash-summary-card .val{
+  font-family:'Space Grotesk','Noto Sans KR',sans-serif; font-weight:800; font-size:17px;
+}
+.dash-summary-card .sub{ font-size:10.5px; color:var(--muted); margin-top:3px; }
+
+/* 대시보드 - 최근 활동 */
+.dash-activity-list{ display:flex; flex-direction:column; gap:8px; padding:0 20px 20px; }
+.dash-activity-item{
+  display:flex; align-items:center; gap:10px;
+  background:var(--card); border:1px solid var(--line); border-radius:12px; padding:11px 14px;
+}
+.dash-activity-icon{
+  width:30px; height:30px; border-radius:50%; flex:0 0 auto;
+  background:rgba(var(--wash-rgb),0.06); display:flex; align-items:center; justify-content:center; font-size:14px;
+}
+.dash-activity-main{ flex:1; min-width:0; }
+.dash-activity-name{ font-weight:700; font-size:12.5px; }
+.dash-activity-sub{ font-size:11px; color:var(--muted); margin-top:1px; }
+.dash-activity-time{ font-size:10.5px; color:var(--muted); flex:0 0 auto; white-space:nowrap; }
+.dash-empty-hint{ font-size:12px; color:var(--muted); padding:0 20px 20px; }
+
+/* 대시보드 - 주요 공지 */
+.dash-notice-wrap{ padding:0 20px 20px; }
+
 /* FAQ 아코디언 */
 .faq-item{
   background:var(--card); border:1px solid var(--line); border-radius:12px;

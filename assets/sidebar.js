@@ -19,7 +19,8 @@
   // 하단에 고정되는 항목 (설정 등). 메뉴가 늘어나도 항상 맨 아래 유지됩니다.
   const BOTTOM_ITEMS = [
     { id: 'settings', icon: '⚙️', label: '설정', href: 'settings.html' },
-    { id: 'admin', icon: '🔑', label: '관리자', href: 'login.html' },
+    // 관리자 로그인(login.html)은 메뉴에서 숨김. 주소(login.html)로 직접 접속하면 그대로 사용 가능.
+    // 다시 메뉴에 보이려면: { id: 'admin', icon: '🔑', label: '관리자', href: 'login.html' }
   ];
 
   function makeNavLink(item, activeId) {
